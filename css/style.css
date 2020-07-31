@@ -1,0 +1,57 @@
+h1 {
+    text-align: center;
+    color: darksalmon;
+}
+
+h1, h2 {
+    font-style: oblique;
+    text-decoration: underline;
+
+}
+h2 {
+    color: darksalmon;
+}
+body {
+    background-color: beige;
+    background-image: url("../img/abstract.jpg");
+    background-size: cover;
+    color: white;
+    list-style: armenian;
+    font-family: "Fira Code Retina";
+
+}
+table, td, tr{
+    font-family: "Fira Code Retina";
+    padding: 20px;
+}
+
+a{
+    color: darksalmon;
+}
+/* unvisited link (:link) */
+a:link {
+    color:darksalmon;
+}
+
+/* visited link (:visited) */
+a:visited {
+    color:white;
+}
+
+/* mouse hover over link (:hover) */
+a:hover {
+    color:darkred;
+}
+
+/* active/selected link (:active) */
+a:active {
+    color:red;
+}
+li {
+    list-style: georgian;
+
+}
+
+
+
+

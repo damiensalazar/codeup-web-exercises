@@ -1,0 +1,55 @@
+:root {
+    --blue-bg-color: blue;
+    --blue-font-color lightblue;
+    --green-bg-color green;
+    --green-font-color lightgreen;
+    --yellow-bg-color yellow;
+    --yellow-font-color lightyellow;
+    --red-bg-color red;
+    --red-font-color lightcoral;
+}
+
+body, html {
+    height: 100%;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    font-family: Arial, Ubuntu, sans-serif;
+}
+.message-info{
+    color: blue;
+    background-color: lightblue;
+    padding: .5em;
+    border: 1px solid blue;
+    border-radius: 10px;
+    margin: .5em;
+
+}
+
+.message-success{
+    color: green;
+    background-color: lightgreen;
+    padding: .5em;
+    border: 1px solid green;
+    border-radius: 10px;
+    margin: .5em;
+
+}
+
+.message-warning{
+    color: yellow;
+    background-color: lightyellow;
+    padding: .5em;
+    border: 1px solid yellow;
+    border-radius: 10px;
+    margin: .5em;
+}
+
+.message-error{
+    color: red;
+    background-color: lightcoral;
+    padding: .5em;
+    border: 1px solid red;
+    border-radius: 10px;
+    margin: .5em;
+}
