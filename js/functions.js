@@ -12,9 +12,12 @@ function sayHello(name){
     return ("Hello, " +name + "!");
 }
 sayHello("codeup");
-console.log(sayHello("codeup"));
+console.log(sayHello("Codeup"));
 
-
+/*function sayHello(name){
+    var message = "Hello, "+ name +"!";
+    return message;
+}*/
 
 
 
@@ -29,6 +32,8 @@ sayHello('Damien');
 var helloMessage = sayHello('Damien');
 console.log(helloMessage);
 
+/*var helloMessage = sayHello("Damien");
+console.log(helloMessage);*/
 
 
 /**
@@ -111,6 +116,16 @@ console.log(calculateTip(0.20, 20));
 console.log(calculateTip(0.25, 25.50));
 console.log(calculateTip(0.15, 33.42));
 
+
+/*const calculateTip = function (tipPercentage, billTotal) {
+    var tipTotal = tipPercentage;
+    return tipAmount''
+}
+console.log(calculateTip(0.20, 20));
+console.log(calculateTip(0.25, 25.50));
+console.log(calculateTip(0.15, 33.42));*/
+
+
 /**
  * TODO:
  * Use prompt and alert in combination with your calculateTip function to
@@ -121,6 +136,16 @@ var bill = prompt("Enter Your Bill Amount");
 var tipAmount = prompt("Enter Your Tip Amount");
  var billTotal = calculateTip(tipAmount, bill);
 alert(billTotal);
+
+/*var message = "What is Your Total Bill? (Only A Number, Decimals Okay!)";
+var bill = prompt(message);
+message = "What Percentage Wold You Like To Tip";
+var percent = prompt(message);
+alert("You Should Tip $" + calculateTip(percent, bil) +".");*/
+
+
+
+
 /**
  * TODO:
  * Create a function named `applyDiscount`. This function should accept a price
@@ -143,3 +168,7 @@ function applyDiscount(originalPrice, discountPercent){
 
 }
 console.log(applyDiscount(100, .2))
+
+/*function applyDiscount(price, discount) {
+    return - (price * discount);
+}*/
