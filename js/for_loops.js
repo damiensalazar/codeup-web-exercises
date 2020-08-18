@@ -1,55 +1,56 @@
-function returnMultiplicationTable(num){
-    var output = ""
-    for (i = 1; i < 10; i++){
-        output += num + " x " + i + " = " + (num * i);
-        if (i !== 10){
-            output += "\n";
-        }
-    }
-    return output;
+function getRandomInt(min, max) {
+    min = Math.ceil(min);
+    max = Math.floor(max);
+    return Math.floor(Math.random() * (max - min + 1)) + min;
 }
 
-function returnEvenOddMessage(integer){
-    var output = "";
-    if (integer%2 !== 0){
-     output += integer + " is odd";
-    }else{
-      output += integer + " is even";
+// returnMultiplicationTable function
+function returnMultiplicationTable(num) {
+    timesTable = '';
+    for (let i = 1; i < 11; i++) {
+        let product = num * i;
+        timesTable += num + " x " + i + " = " + product
+        if (i !== 10) timesTable += "\n"
     }
-return output;
+    return timesTable
 }
 
+// returnEvenOddMessage function
+function returnEvenOddMessage(num) {
+    if (!Number.isInteger(num)) return num + " is invalid"
+    if (num%2 === 0) return num + " is even"
+    else return num + " is odd"
+}
 
-//me
-// function returnTenEvenOddMessages() {
-//     var output = "";
-//     for (var i = 0 ; i < 10; i++){
-     var num = Math.floor(Math.random() * (180 + 1) + 20);
-//         output += returnEvenOddMessage(num)
-//
-//     }
-// }
-
-
-//Trant
+// returnTenEvenOddMessages function
 function returnTenEvenOddMessages() {
-    let output = ""
-    for (var i = 0; i <10; i++){
-        output += returnEvenOddMessage(num(20, 200))
+    let output = '';
+    for (let i = 0; i < 10; i++) {
+        output += returnEvenOddMessage(getRandomInt(20, 200))
         if (i < 9) output += '\n'
-    }
-    return "odd"
-}
-
-
-//Nested for loops;
-function returnNumberSail() {
-    let output = "";
-    for (var i = 1; i <= 9; i++){
-        for (var j = 0; j < i; j++){
-            output += i
-        }
-        if (i < 9) output += '\n';
     }
     return output
 }
+
+// returnNumberSail function
+function returnNumberSail() {
+    let output = '';
+    for (let i = 1; i < 10; i++) {
+        for (let j = 1; j <= i; j++) {
+            output += i
+        }
+        if (i < 9) output += '\n'
+    }
+    return output
+}
+
+// returnCountDownFrom100InFives function
+function returnCountDownFrom100InFives() {
+    let output = '';
+    for (let i = 100; i > 0; i -= 5) {
+        output += i
+        if (i !== 5) output += '\n'
+    }
+    return output
+}
+

@@ -86,15 +86,20 @@ describe("returnTenEvenOddMessages", function() {
 // Number Sail Tests
 describe("returnNumberSail", function() {
     // TODO: include a test to verify that the function is defined
-    it('should be defined', function () {
-        expect(typeof returnNumberSail).toBe("function")
-
-    });
-    it('should return a string', function () {
-        expect(typeof returnNumberSail()).toBe("string")
+    it('returnNumberSail should be defined', function () {
+        expect(typeof returnNumberSail).toBe('function');
 
     });
     // TODO: include a test to verify that the function output is a string
+    it('returnNumberSail() should return a number when passed a string', function () {
+        expect(typeof returnNumberSail()).toBe('string')
+
+    });
+    // TODO: include a test to verify that the function output is a string
+    it('function output should return string ', function () {
+        expect()
+
+    });
 
     // TODO: include a test to verify that the function output matches the following value
     var expectedValue = "1\n" +
@@ -106,9 +111,43 @@ describe("returnNumberSail", function() {
         "7777777\n" +
         "88888888\n" +
         "999999999";
-
+    const it1 = it('returnNumberSail() should return a number sail.', function () {
+        expect(returnNumberSail()).toBe(expectedValue)
+    })
 });
 
 
 // Count Down in Fives Tests
 // TODO: include another test suite that verifies that returnCountDownFrom100InFives is defined (first test) and returns the expected output (second test)
+
+describe('returnCountDownFrom100InFives', function () {
+    it('returnCountDownFrom100InFives should be defined', function() {
+        expect(typeof returnCountDownFrom100InFives).toBe('function');
+    });
+    it('returnCountDownFrom100InFives() should return a number when passed a number', function() {
+        expect(typeof returnCountDownFrom100InFives()).toBe('string')
+    })
+    it('returnCountDownFrom100InFives() should return a number one greater than the input', function() {
+        expect(returnCountDownFrom100InFives()).toBe(
+            '100\n' +
+            '95\n' +
+            '90\n' +
+            '85\n' +
+            '80\n' +
+            '75\n' +
+            '70\n' +
+            '65\n' +
+            '60\n' +
+            '55\n' +
+            '50\n' +
+            '45\n' +
+            '40\n' +
+            '35\n' +
+            '30\n' +
+            '25\n' +
+            '20\n' +
+            '15\n' +
+            '10\n' +
+            '5')
+    })
+})
