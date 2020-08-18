@@ -28,23 +28,24 @@ describe("returnMultiplicationTable", function() {
 describe("returnEvenOddMessage", function() {
     it("should be defined", function() {
         // TODO: add an assertion to verify that the function is defined
-        expect(typeof returnEvenOddMessage).toBeDefined()
+        expect(returnEvenOddMessage).toBeDefined()
 
     });
     it("should return a string when passed an integer", function() {
         // TODO: add an assertion verifying that the function returns a string when passed an integer
-expect(typeof returnEvenOddMessage()).toEqual("string")
+expect(typeof returnEvenOddMessage(1)).toEqual("string")
     });
     it("should return the correct message when passed an integer", function() {
         // TODO: add several assertions that verify the correct string output for a given integer input
-        expect(typeof returnEvenOddMessage()).toEqual("string");
-
+        expect(returnEvenOddMessage(1)).toEqual("1 is odd")
+        expect(returnEvenOddMessage(2)).toEqual("2 is even")
+        expect(returnEvenOddMessage(3)).toEqual("3 is odd")
     });
 });
 
 describe("returnTenEvenOddMessages", function() {
     it('should be defined', function () {
-        expect(returnTenEvenOddMessge).toBeDefined();
+        expect(returnTenEvenOddMessages).toBeDefined();
 
     });
     // TODO: add a test to verify that the function is defined
@@ -52,7 +53,7 @@ describe("returnTenEvenOddMessages", function() {
     it("should return an output that ends with the word 'odd' or 'even'", function() {
         var output = returnTenEvenOddMessages();
         // TODO: add an assertion to verify that the function output ends with either "even" or "odd"
-        return
+        expect(returnTenEvenOddMessages()).toContain("even" || "odd");
 
 
     });
@@ -76,6 +77,7 @@ describe("returnTenEvenOddMessages", function() {
         }
 
         // TODO: assert that the outputContainsExpectedNumbers function returns true
+        expect(returnTenEvenOddMessages()).toBe(true)
 
     });
 });
@@ -85,11 +87,11 @@ describe("returnTenEvenOddMessages", function() {
 describe("returnNumberSail", function() {
     // TODO: include a test to verify that the function is defined
     it('should be defined', function () {
-        expect("returnNumberSail").toBeDefined();
+        expect(typeof returnNumberSail).toBe("function")
 
     });
     it('should return a string', function () {
-        expect(typeof returnNumberSail).toBe("string")
+        expect(typeof returnNumberSail()).toBe("string")
 
     });
     // TODO: include a test to verify that the function output is a string
@@ -104,6 +106,7 @@ describe("returnNumberSail", function() {
         "7777777\n" +
         "88888888\n" +
         "999999999";
+
 });
 
 
