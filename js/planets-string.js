@@ -25,13 +25,20 @@
      * string, and <li> tags around each planet.
      */
 
-    var newPlanetsString = "Sun|Mercury|Venus|Earth|Mars|Jupiter|Saturn|Uranus|Neptune|Pluto";
+    var newPlanetsString = "Sun\nMercury\nVenus\nEarth\nMars\nJupiter\nSaturn\nUranus\nNeptune\nPluto";
+    var newNewPlanetsString = "Sun<br>Mercury<br>Venus<br>Earth<br>Mars<br>Jupiter<br>Saturn<br>Uranus<br>Neptune<br>Pluto";
     var newPlanetsArray;
 
+
     console.log(newPlanetsString);
-    newPlanetsArray = newPlanetsString.split("|")
+    newPlanetsArray = newPlanetsString.split("\n")
     console.log(newPlanetsArray)
-    newPlanetsArray.join("\n")
+    console.log(newNewPlanetsString)
+    // newPlanetsArray.join(",")
+    // console.log(newPlanetsArray);
+
+    var newArray = ['The Planets', ['Sun', 'Mercury', 'Earth', 'Mars', 'Jupiter', 'Saturn', 'Uranus', 'Neptune', 'Pluto']];
+    console.log(newArray);
 
 
 })();
