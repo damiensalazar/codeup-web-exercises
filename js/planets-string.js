@@ -40,5 +40,12 @@
     var newArray = ['The Planets', ['Sun', 'Mercury', 'Earth', 'Mars', 'Jupiter', 'Saturn', 'Uranus', 'Neptune', 'Pluto']];
     console.log(newArray);
 
+    var planetsList = "<ul>\n<li>"
+    planetsList += planetsArray.join("</li>\n</ul>")
+    planetsList += "</li>\n</ul>"
+
+    console.log(planetsList)
+
+    document.getElementById("planets").innerHTML = planetsList;
 
 })();
