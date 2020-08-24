@@ -191,6 +191,9 @@
 
 
 
+
+
+
     /**
      * Bonus:
      * - Create a function named `createBook` that accepts a title and author
@@ -220,5 +223,32 @@
 //         //...
 //         return output;
 //     }
+
+
+    var createBook = function(title, firstName, lastName){
+        var book = {};
+        book.title = title;
+        book.author = {
+            firstName: firstName,
+            lastName: lastName
+        }
+    }
+    return book;
+
+    books.push(createBook("Call Sign Chaos", firstname: "Jim", lastname: "Mattis"));
+    books.push(createBook("The Cosmic Serpent", firstname: "Jeremy", lastname: "Narby"));
+
+    var showBookInfo = function(book, bookNum){
+        
+    }
+
+    books.forEach(function(book,i){
+        console.log("Book # " + (i+1));
+        console.log("Title: " + book.title);
+        console.log("Author: " +book.author.firstName + " " + book.author.lastName);
+        console.log("---")
+    })
+
+
 
 })();
