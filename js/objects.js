@@ -33,6 +33,11 @@
      * > console.log(person.sayHello()) // "Hello from Rick Sanchez!"
      */
 
+    //Another Way to Do The sayHello();
+    person.sayHello = function(){
+        return "Hello From " +this.firstName + " " + this.lastName + "!";
+    }
+    console.log(person.sayHello())
 
 
     /** TODO:
@@ -54,7 +59,13 @@
         {name: 'Ryan', amount: 250},
         {name: 'George', amount: 320}
     ];
-
+    shoppers.forEach(function(shopper) {
+        if (shopper.amount < 200) {
+            console.log("The shopper " + shopper.name + " spent " + shopper.amount + " on groceries. " + shopper.name + " does not qualify for the discount.")
+        } else if (shopper.amount >= 200) {
+            console.log("The shopper " + shopper.name + " spent " + shopper.amount + " on groceries. " + shopper.name + " qualifies for a 12% discount. " + shopper.name + "'s amount after the discount is " + "" + (shopper.amount - (shopper.amount * .12)) + ".")
+        }
+    });
 
     /** TODO:
      * Create an array of objects that represent books and store it in a
@@ -68,13 +79,84 @@
      * > console.log(books[0].author.firstName) // "Douglas"
      * > console.log(books[0].author.lastName) // "Adams"
      */
-    shoppers.forEach(function(shopper) {
-        if (shopper.amount < 200) {
-            return console.log("The shopper " + shopper.name + " spent " + shopper.amount + " on groceries. " + shopper.name + " does not qualify for the discount.")
-        } else if (shopper.amount >= 200) {
-            console.log("The shopper " + shopper.name + " spent " + shopper.amount + " on groceries. " + shopper.name + " qualifies for a 12% discount. " + shopper.name + "'s amount after the discount is " + "" + (shopper.amount - (shopper.amount * .12)) + ".")
+
+    var books = [
+        {
+            title: "The Salmon of Doubt",
+            author: {
+                firstName: "Douglas",
+                lastName: "Adams"
+            }
+        },
+        {
+            title: "Walkaway",
+            author: {
+                firstName: "Cory",
+                lastName: "Doctorow"
+            }
+        },
+        {
+            title: "A Brief History of Time",
+            author: {
+                firstName:"Stephen",
+                lastName: "Hawking"
+            }
+        },
+        {
+            title: "To Kill A Mockingbird",
+            author: {
+                firstName: "Harper",
+                lastName: "Lee"
+            }
+        },
+        {
+            title: "Great Expectations",
+            author: {
+                firstName: "Charles",
+                lastName: "Dickens"
+            }
+        },
+        {
+            title: "Lord of the Flies",
+            author: {
+                firstName: "William",
+                lastName: "Golding"
+            }
+        },
+        {
+            title: "The Scarlet Letter",
+            author: {
+                firstName: "Nathaniel",
+                lastName: "Hawthorne"
+            }
+        },
+        {
+            title: "The Catcher in the Rye",
+            author: {
+                firstName: "JD",
+                lastName: "Salinger"
+            }
+        },
+        {
+            title: "Wuthering Heights",
+            author: {
+                firstName: "Emily",
+                lastName: "Bronte"
+            }
+        },
+        {
+         title: "Pride And Prejudice",
+         author: {
+             firstName: "Jane",
+             lastname: "Austen"
+         }
         }
-    });
+
+    ]
+    // console.log(books[0].book);
+    // console.log(books[0].title);
+    // console.log(books[0].author.firstName +author.lastName);
+    // console.log(books[0].author.lastName);
 
     /**
      * TODO:
@@ -100,6 +182,14 @@
      *      ---
      *      ...
      */
+    books.forEach(function(book,i) {
+        console.log("Book # "+(i+1) +  "\nTitle: " +book.title+ "\nAuthor: " +book.author.firstName +" " + book.author.lastName)
+    })
+
+
+
+
+
 
     /**
      * Bonus:
@@ -111,5 +201,24 @@
      *   outputs the information described above. Refactor your loop to use your
      *   `showBookInfo` function.
      */
+// var book = {
+//     title: "The Art of War",
+//         author: {
+//             firstName: "Sun",
+//             lastName: "Tsu"
+//         }
+//     }
+//         var createBook = function(title, author){
+//             var output = "";
+//             output += "Title: " + book.title + "\n" + "Author:" + book.author.firstName + " " + book.author.lastName
+//     }
+//
+//
+//     var showBookInfo = function(book) {
+//         var output = ""
+//         output += "Title: " + book.title + "\n";
+//         //...
+//         return output;
+//     }
 
 })();
