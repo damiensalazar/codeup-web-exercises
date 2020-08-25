@@ -14,8 +14,9 @@
     "use strict";
 
     var detonationTimer = 5;
-
+    var interval = 1000;
     // TODO: This function needs to be called once every second
+    let intervalID =  setInterval(updateTimer, interval)
     function updateTimer() {
         if (detonationTimer == 0) {
             alert('EXTERMINATE!');
@@ -27,9 +28,12 @@
         detonationTimer--;
     }
 
+
     // TODO: When this function runs, it needs to
     // cancel the interval/timeout for updateTimer()
     function defuseTheBOM() {
+        clearInterval(intervalID)
+
 
     }
 
