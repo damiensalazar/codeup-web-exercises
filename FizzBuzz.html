@@ -1,27 +1,32 @@
 <!DOCTYPE html>
-<html lang="">
+<html>
 <head>
-    <title>Sample Page</title>
+    <title></title>
 </head>
 <body>
-<h1>Test Heading</h1>
-<p>Test Paragraph</p>
+<button id="me">Click Me!</button>
+<button id="me2">Remove Event Listener</button>
 <script>
-    "use strict";
-    (function() {
-        // Get the body element (notice we need to use index 0 of the array!)
-        var bodyElement = document.getElementsByTagName('body')[0];
+    'use strict';
 
-        // Change the body font color
-        bodyElement.style.color = '#444'; // Dark grey
-        bodyElement.style.textAlign = 'center';
+    var runMessageAfterButton = function (event) {
+        alert('You clicked the button!');
+    }
 
-        bodyElement.style['background-color'] = "#fefefe"; // Very light grey
-        // We had to use [] syntax since the property name has a dash
+    // add event listener to btn1
+    var me = document.getElementById('me');
+    btn1.addEventListener('click', runMessageAfterButton);
 
-        bodyElement.style.fontFamily = "Helvetica, Verdana, Sans-Serif";
-        // Replace dashes with camelCase to use standard . syntax
-    })();
+    var remover = function (event) {
+        // remove event listener from btn1
+        me.removeEventListener('click', runMessageAfterButton);
+        console.log('Event listener removed.');
+    }
+
+    // add event listener to btn2
+    var me2 = document.getElementById('me2');
+    me2.addEventListener('click', remover);
+
 </script>
 </body>
 </html>
