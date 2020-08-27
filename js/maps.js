@@ -148,7 +148,15 @@ let favEats = [
     }
 ];
 
-favEats.forEach(function())
+favEats.forEach(function(eats){
+    var popup = new mapboxgl.Popup()
+        .setHTML(`<p>${eats.name}</p>`);
+    new mapboxgl.Marker()
+        .setLngLat(eats.lngLat)
+        .addTo(map)
+        .setPopup(popup)
+});
+
 
 
 
