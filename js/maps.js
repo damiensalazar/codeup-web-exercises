@@ -112,11 +112,11 @@ marker2.setPopup(saltPopup)
 //restaurant number three
 
 var marker3 = new mapboxgl.Marker()
-    .setLngLat([-98.606203, 29.480626])
+    .setLngLat([-98.606101, 29.480644])
     .addTo(map);
 
 var ojosPopup = new mapboxgl.Popup()
-    .setLngLat([-98.619953, 29.462789])
+    .setLngLat([-98.606101, 29.480644])
     .setHTML("<p><em>Ojos Locos!</em></p>")
     .addTo(map)
 
@@ -135,16 +135,19 @@ map.on('mouseleave', 'places', function() {
 let favEats = [
     {
         lngLat: [-98.5002, 29.4251],
-        name: "Mi Tierra"
+        name: "Mi Tierra ",
+        favoriteDish: "Cheese Enchilada"
 
     },
     {
         lngLat: [-98.619953, 29.462789],
-        name: "Salt Grass"
+        name: "Saltgrass Steak House",
+        favoriteDish: "16oz. Pat's Ribeye"
     },
     {
-        lngLat: [-98.619953, 29.462789],
-        name: "Ojos Locos"
+        lngLat: [-98.606101, 29.480644],
+        name: "Ojos Locos",
+        favoriteDish: "Three Carnitas Tacos with Rice and Beans!"
     }
 ];
 
