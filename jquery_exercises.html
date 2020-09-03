@@ -4,9 +4,9 @@
     <title>Curriculum Code Sample</title>
 </head>
 <body>
-<div class="codeup">
+<div class="containe1r">
 <h1 id="heading1">Heading Number One</h1>
-<p id="codeup">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut consectetur consequuntur, cum dignissimos dolorum
+<p id="paragraph1">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut consectetur consequuntur, cum dignissimos dolorum
     facilis minima non nulla, obcaecati odit qui quidem vero voluptate? Accusamus impedit neque nesciunt quaerat velit!
 </p>
     <p id="O-list-heading">Ordered List Heading</p>
@@ -18,13 +18,13 @@
     </ol>
 </div>
 <br><br>
-<div class="codeup">
+<div class="container2">
 <h2 id="heading2">Heading Number Two</h2>
 <p id="paragraph2">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam atque est in inventore, labore magni molestiae
     quae quas quo reprehenderit tempore, veniam. Aperiam ex quos tenetur ut. Dignissimos, ea, ipsam!
 </p>
-    <p id="list-heading">List Heading</p>
-<ul id="list">
+    <p id="ul-list-heading">List Heading</p>
+<ul id="ul-list">
     <li>Item Number One</li>
     <li>Item Number Two</li>
     <li>Item Number Three</li>
@@ -40,7 +40,10 @@
     (function(){ //IIFE
         "use strict";
         $(document).ready(function() {
-            $('.codeup').css('border', '1px dashed purple');
+            $('li').css('font-size', '20px')
+            $("h1, p, li").css('background-color', 'yellow')
+            var contents = $('h1').html();
+            alert(contents)
 
         });
     })();
