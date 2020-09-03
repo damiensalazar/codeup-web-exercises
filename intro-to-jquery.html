@@ -9,8 +9,80 @@
 <input id="input" type="text">
 <button id="btn">Click</button>
 <section id="output"></section>
+<h1 id="codeup">Hello, CodeUp!</h1>
+<p1 id="p1">Jquery is Cool</p1>
+<h1>Example Page</h1>
+<div class="important">
+    <h3>NOTICE</h3>
+    <p>This is an important message!</p>
+</div>
+<div class="not-important">
+    <h2>Lorem Ipsum</h2>
+    <p>
+        Lorem ipsum dolor sit amet, incididunt ut <span class="important">labore et dolore magna aliqua.</span>, quis ut aliquip ex ea commodo.
+    </p>
+</div>
+<p class="important">This is also very important.</p>
 
 <script src="https://code.jquery.com/jquery-2.2.4.js" integrity="sha256-iT6Q9iMJYuQiMWNd9lDyBUStIq/8PuOW33aOqmvFpqI=" crossorigin="anonymous"></script>
+
+<!-- wrapped in IIFE -->
+<!-- "best practices"-->
+<script>
+    (function(){ // IIFE
+        "use strict";
+    $().ready(function() { // Document loaded and ready
+    $("#output").html("<h2>Hello World</h2>");
+    alert("The DOM had finished loading");
+    });
+})();
+</script>
+<script>
+    (function(){ //IIFE
+        "use strict";
+        $().ready(function(){ //Document loaded and ready
+            $("output").html("<h2>Hello World</h2>");
+            alert("The DOM has finished loading")
+        });
+    })();
+
+    var contents = $('codeup').html();
+    alert(contents);
+
+    $().ready(function(){
+        var contents = $('#codeup').html();
+        $('#codeup').html('<strong>The Change!</strong>')
+        alert(contents);
+    });
+
+    $().ready(function(){
+        var contents = $('#p1').html();
+        $('#p1').html('<strong>JQuery Rocks!</strong>');
+        alert(contents)
+    });
+//implementing css
+    (function(){
+        "use strict"
+        $().ready(function(){
+            $('.important').css('background-color', 'yellow');
+        });
+    })();
+
+    (function(){
+        "use strict"
+        $().ready(function(){
+            $('.not-important').css('background-color', 'green');
+            $('p').css('font-size', '28px');
+            $('h3').css('color', 'red');
+            $('p > .important').css('background-color', 'red')
+            $('h1, h3').css('background-color', 'blue')
+            $('*').css('border', '1px dashed #F00');
+        });
+    })();
+
+
+</script>
+
 
 </body>
 </html>
