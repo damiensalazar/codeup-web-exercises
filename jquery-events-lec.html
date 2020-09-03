@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Test Page</title>
+</head>
+<body>
+<h1 id="codeup">Hello Codeup</h1>
+<p id="p1"></p>
+<script src="js/jquery-2.2.4.js"></script>
+<script>
+    (function () { // IFEE
+        "use strict"
+        $().ready(function () {
+            $('#codeup').click(function() {
+                alert('h1 with id "codeup" was clicked');
+            });
+            $('p1').dblclick(function(){
+                $(this).css('background-color', 'yellow')
+            });
+            $('#codeup').hover(function(){
+
+            })
+        });
+    })();
+</script>
+</body>
+</html>

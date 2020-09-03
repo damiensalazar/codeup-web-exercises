@@ -80,6 +80,19 @@
         });
     })();
 
+    var ele = document.getElementById('my-element');
+    ele.addEventListener('click', function(e) {
+        alert('My element was clicked')
+    });
+
+    function clickHandler(e) {
+        alert('My element was clicked!');
+    }
+    var ele = document.getElementById('my-element');
+    ele.addEventListener('click', clickHandler)
+
+
+
 
 </script>
 
