@@ -19,3 +19,23 @@ function fizzBuzz (num){
 // }
 
 fizzBuzz(30);
+
+
+function average(arr){
+    var sum = 0;
+    for (var i = 0; i < arr.length; i++) {
+        sum += arr[i]
+    }
+    return sum / arr.length;
+}
+
+function average(arr){
+    var sum = 0;
+    if (Array.isArray(arr)){
+        for (var i = 0; i < arr.length; i++) {
+            sum += arr[i];
+        }
+    } else {
+        console.log('Enter an array')
+    }
+}
