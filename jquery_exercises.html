@@ -39,8 +39,8 @@
 <script>
     (function(){ //IIFE
         "use strict";
-        $('#heading1').click(function() {
-            $('#heading1').css('background-color', 'yellow');
+        $('#heading1, #heading2').click(function() {
+            $('#heading1, #heading2').css('background-color', 'yellow');
         });
         $('p').dblclick(function(){
             $('p').css('font-size', '18px')
