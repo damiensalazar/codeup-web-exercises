@@ -39,10 +39,20 @@
 <script>
     (function(){ //IIFE
         "use strict";
-        $(document).ready(function() {
-            $('h1, p, li').css('background-color', 'yellow')
-
+        $('#heading1').click(function() {
+            $('#heading1').css('background-color', 'yellow');
         });
+        $('p').dblclick(function(){
+            $('p').css('font-size', '18px')
+        });
+        $('li').hover(
+            function() {
+                $(this).css('background-color', 'red');
+            },
+            function() {
+                $(this).css('background-color', '#FFF');
+            }
+        );
     })();
 
 </script>

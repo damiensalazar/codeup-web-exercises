@@ -5,8 +5,9 @@
 </head>
 <body>
 <h1 id="codeup">Hello Codeup</h1>
-<p id="p1"></p>
-<script src="js/jquery-2.2.4.js"></script>
+<p id="p1">It's good to see you.</p>
+<script src="https://code.jquery.com/jquery-2.2.4.js" integrity="sha256-iT6Q9iMJYuQiMWNd9lDyBUStIq/8PuOW33aOqmvFpqI=" crossorigin="anonymous"></script>
+
 <script>
     (function () { // IFEE
         "use strict"
@@ -14,12 +15,10 @@
             $('#codeup').click(function() {
                 alert('h1 with id "codeup" was clicked');
             });
-            $('p1').dblclick(function(){
-                $(this).css('background-color', 'yellow')
-            });
-            $('#codeup').hover(function(){
 
-            })
+                $('#p1').dbclick(function(){
+                    $(this).css('background-color', 'yellow')
+                })
         });
     })();
 </script>
