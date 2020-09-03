@@ -1,5 +1,5 @@
 function fizzBuzz (num){
-    for (var i = 1; i <= num.length; i++){
+    for (let i = 1; i <= num; i++){
         if (i % 15 === 0){
             console.log("fizzbuzz")
         }else if (i % 3 === 0){
@@ -9,8 +9,13 @@ function fizzBuzz (num){
         }else{
             console.log(i);
         }
-
     }
 }
+
+// var i = 1;
+// while(i <= num){
+//     //fizzBuzz stuff
+//     i++;
+// }
 
 fizzBuzz(30);
