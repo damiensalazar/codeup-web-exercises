@@ -40,17 +40,17 @@
     (function(){ //IIFE
         "use strict";
         $('#heading1, #heading2').click(function() {
-            $('#heading1, #heading2').css('background-color', 'yellow');
+            $(this).css('background-color', 'yellow');
         });
         $('p').dblclick(function(){
-            $('p').css('font-size', '18px')
+            $(this).css('font-size', '18px')
         });
         $('li').hover(
             function() {
-                $(this).css('background-color', 'red');
+                $(this).css('color', 'red');
             },
             function() {
-                $(this).css('background-color', '#FFF');
+                $(this).css('color', 'black');
             }
         );
     })();
