@@ -6,34 +6,30 @@
 <body>
 <h1>Konami Code</h1>
 
-<script src="https://code.jquery.com/jquery-2.2.4.js" integrity="sha256-iT6Q9iMJYuQiMWNd9lDyBUStIq/8PuOW33aOqmvFpqI=" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-2.2.4.js" integrity="sha256-iT6Q9iMJYuQiMWNd9lDyBUStIq/8PuOW33aOqmvFpqI="
+        crossorigin="anonymous"></script>
 
 <script>
     "use strict";
     let theActualCode = [38, 38, 40, 40, 37, 39, 37, 39, 66, 65, 13];
     let typedCode = [];
 
-    $(document).keyup(function(event){
+    $(document).keyup(function (event) {
         typedCode.push(event.keyCode)
         console.log(event.keyCode);
         console.log(typedCode)
 
-        if(typedCode.join(",") === theActualCode.join(",")) {
+        if (typedCode.join(",") === theActualCode.join(",")) {
             alert("You've gained 30 Lives!");
             typedCode = []
-            if(typedCode.length > 11){
+            if (typedCode.length > 11) {
                 console.log(typedCode)
             }
-        }else{
-            console.log("No luck this time, survive!")
+        } else if (typedCode.length > 11) {
+            typedCode = []
+            alert("No luck this time, survive!")
             console.log(typedCode)
-
         }
-
-
-
-
-
     });
 </script>
 </body>
