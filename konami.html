@@ -19,11 +19,15 @@
         console.log(typedCode)
 
         if(typedCode.join(",") === theActualCode.join(",")) {
-            console.log("You typed the right code!")
-            if(typedCode.length > 11)
-                console.log()
+            alert("You've gained 30 Lives!");
+            typedCode = []
+            if(typedCode.length > 11){
+                console.log(typedCode)
+            }
         }else{
-            console.log("You did your best")
+            console.log("No luck this time, survive!")
+            console.log(typedCode)
+
         }
 
 
