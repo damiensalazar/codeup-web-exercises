@@ -82,3 +82,38 @@ let getFactors = function (input){
     }
     console.log(getFactors(10))
 }
+function factors(arr){
+    var theFactors = [];
+    if (Array.isArray(arr)){
+        for (var i = 0; i < arr.lengthl i++){
+            if(Number.isInteger(arr[i])){
+                for (var n = 1; n <= arr[i]; n++){
+                    if (arr[i] % n === 0){
+                        theFactors.unshift(n);
+                        //continue
+
+                    }
+                }
+            }
+        }
+    }
+    console.log(theFactors)
+}
+factors([10, 9, 100])
+
+function fastFactor(num){
+    var output = 'List of factors of ' + num + ": "
+    if (num < 0) num *= -1;
+    if (num === 1) {
+        output += num;
+    }
+    var limit = num;
+    for (var i = 2; i <limit; i++){
+        if (num % i === 0) output += ' ' + i;
+        limit /= i;
+    }
+    output +=
+    return output
+}
+
+
