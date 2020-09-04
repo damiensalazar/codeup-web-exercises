@@ -18,10 +18,10 @@
 <main class="container">
     <section class="jumbotron">
         <h1>Fun with jQuery!</h1>
-        <button id="btn1" type="button" class="btn btn-default">#btn1</button>
-        <button id="btn2" type="button" class="btn btn-default">#btn2</button>
-        <button id="btn3" type="button" class="btn btn-default">#btn3</button>
-        <button id="btn4" type="button" class="btn btn-default">#btn4</button>
+        <button id="btn1" type="button" data-id="1" class="btn btn-default">#btn1</button>
+        <button id="btn2" type="button" data-id="2" class="btn btn-default">#btn2</button>
+        <button id="btn3" type="button" data-id="3" class="btn btn-default">#btn3</button>
+        <button id="btn4" type="button" data-id="4" class="btn btn-default">#btn4</button>
     </section>
     <section class="col-xs-3">
         <article id="panel1" class="panel panel-primary">
@@ -83,6 +83,11 @@
     $('.btn').each(function(){
         var message = $(this).attr("id") + " was clicked"
         alert(message);
+    });
+
+    var id = $(this).attr("data-id");
+    $(this).dblclick(function(){
+        $("#panel"+ id).toggleClass("hidden")
     });
 
 </script>
