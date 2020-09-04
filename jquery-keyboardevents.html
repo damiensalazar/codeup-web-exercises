@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Keyboard Events</title>
+</head>
+<body>
+<p>Please type something into this form:</p>
+<form>
+    <input type="text" id="textfield" name="textfield" placeholder="Type Here"/>
+</form>
+<p>Please type something into this form:</p>
+<form>
+    <input type="text" id="textfield2" name="textfield" placeholder="Type Here"/>
+</form>
+<p>Please type something into this form:</p>
+<form>
+    <input type="text" id="textfield3" name="textfield" placeholder="Type Here"/>
+</form>
+<p>Please type something into this form:</p>
+<form>
+    <input type="text" id="textfield4" name="textfield" placeholder="Type Here"/>
+</form>
+<p>Please type something into this form:</p>
+<form>
+    <input type="text" id="textfield5" name="textfield" placeholder="Type Here"/>
+</form>
+<script src="https://code.jquery.com/jquery-2.2.4.js" integrity="sha256-iT6Q9iMJYuQiMWNd9lDyBUStIq/8PuOW33aOqmvFpqI=" crossorigin="anonymous"></script>
+<script>
+    (function () { // IFEE
+        "use strict"
+        $().ready(function () {
+            $('#textfield').keydown(function() {
+                alert('A key was pushed down!');
+            });
+            $('#textfield2').keyup(function(){
+                alert('a key was released!');
+            });
+            $('#textfield3').keypress(function(){
+                alert('Keypressed');
+            });
+            $('#textfield4').on('keyup', function() {
+                alert('A key was released');
+            });
+            $('#textfield5').click(function(){
+                alert('a key was pressed down')
+            });
+            $('#textfield5').off('click');
+        });
+    })();
+</script>
+
+</body>
+</html>
