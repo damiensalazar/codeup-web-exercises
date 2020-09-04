@@ -68,6 +68,17 @@ function calculate(num) {
         }
     }
     console.log(str);
+
 }
 
-calculate(232);
+calculate(50);
+
+let getFactors = function (input){
+    let answerArray = [];
+    for(let i = 1; i  <= input; i++){
+        if (input % i === 0) {
+            answerArray.push();
+        }
+    }
+    console.log(getFactors(10))
+}
