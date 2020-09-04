@@ -70,12 +70,19 @@
 
 <script>
 
+    console.log("Ready to Play")
+
     $(document).ready(function(){
 
         $("#btn1").click(function(){
             $("#panel1").toggleClass("red");
         });
 
+    });
+
+    $('.btn').each(function(){
+        var message = $(this).attr("id") + " was clicked"
+        alert(message);
     });
 
 </script>
