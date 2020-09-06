@@ -8,6 +8,7 @@
 <h1>National Parks!</h1>
 
 <p>Ten Facts About National Parks!</p>
+
 <dl>
 
     <dt>Acadia National Park</dt>
@@ -68,5 +69,20 @@
 
 </dl>
 
+<button class="toggle">Toggle dd</button>
 </body>
+
+<script src="https://code.jquery.com/jquery-2.2.4.js" integrity="sha256-iT6Q9iMJYuQiMWNd9lDyBUStIq/8PuOW33aOqmvFpqI="
+        crossorigin="anonymous"></script>
+
+<script>
+    (function () { // IFEE
+        "use strict"
+        $().ready(function () {
+            $('button').click(function(){
+                $('dd').toggle();
+            })
+        })
+    })();
+</script>
 </html>
