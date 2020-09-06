@@ -97,7 +97,7 @@
     <li>In 2012, the park was named as an International Dark Sky Park. Big Bend National Park has the darkest measured skies in the lower 48 states, and star gazing here is obviously superb.</li>
     <li>Floating the Rio Grande River, especially through Santa Elena Canyon, is a popular activity. Since the international border is officially in the middle of the river, these trips are treated as international trips by authorities, and proper documentation (i.e. a passport) is required.</li>
 </ul>
-<button>Yellow Background</button>
+<button class="yellow">Yellow Background</button>
 
 </body>
 
@@ -111,8 +111,15 @@
             $('.toggle').click(function(){
                 $('dd').toggle();
             });
-            $('#national-parks-heading1').next().css('background-color', 'salmon')
-            ;
+            $('#alibates, ul li:last-child').css({"background-color":"yellow"})
+            $('#bigbend ul li').eq(3).css({"color":"yellow"})
+            $('.yellow').click(function(){
+                $('ul li:last-child').toggle();
+            })
+
+
+
+
         });
     })();
 </script>
