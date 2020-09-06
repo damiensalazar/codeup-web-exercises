@@ -74,6 +74,7 @@
 
 <button class="toggle">Hide/Show</button>
 <br>
+
 <h3 id="national-parks-heading1">Alibates Flint Quarries National Monument</h3>
 <ul id="albates">
     <li>Established in 1965.</li>
@@ -125,9 +126,25 @@
             $('li').click(function(){
                 $('ul li:first-child').css("color", "blue");
             });
-            $('#x').click(function (){
+            $('#x').click(function () {
                 $('.container').hide();
-            })
+            });
+            $('#albates').hide();
+            $('#national-parks-heading1').click(function() {
+                $('#albates').toggle();
+            });
+            $('#amistad').hide();
+            $('#national-parks-heading2').click(function() {
+                $('#amistad').toggle();
+            });
+            $('#bigbend').hide();
+            $('#national-parks-heading3').click(function() {
+                $('#bigbend').toggle();
+            });
+
+
+
+
 
 
 
