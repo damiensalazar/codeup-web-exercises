@@ -5,6 +5,9 @@
     <title>jQuery Traversing</title>
 </head>
 <body>
+<div class="container">
+    <h1>Would You Like To Sign Up For Our Newsletter? <span id="x">X</span></h1>
+</div>
 <h1>National Parks!</h1>
 
 <p>Ten Facts About National Parks!</p>
@@ -122,6 +125,10 @@
             $('li').click(function(){
                 $('ul li:first-child').css("color", "blue");
             });
+            $('#x').click(function (){
+                $('.container').hide();
+            })
+
 
 
 
