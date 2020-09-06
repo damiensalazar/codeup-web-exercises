@@ -5,8 +5,10 @@
 </head>
 <body>
 <h1>Konami Code</h1>
-<img src="img/toasty.png" class="toasty" width="50px">
-<img src="img/mk.jpg" width="100%" height="100%">
+<img src="img/mk.jpg" width="100%" height="100%" class="mk">
+<img src="img/whoopsie2.png" width="300px" height="300px" class="whoopsie" hidden>
+<img src="img/whoopsie.png" width="300px" height="300px" class="whoopsie2" hidden>
+
 
 <style>
     body{
@@ -15,7 +17,7 @@
         margin: 0;
         padding: 0;
     }
-    img {
+    .mk {
         min-width: 100%;
         min-height: 100%;
         margin: 0;
@@ -24,6 +26,20 @@
     .toasty{
         width: 300px;
         height: 400px;
+
+    }
+    .whoopsie{
+        position: absolute;
+        bottom: 0;
+        left: 0;
+
+
+    }
+    .whoopsie2{
+        position: absolute;
+        bottom: 0;
+        right: 0;
+
 
     }
     h1{
