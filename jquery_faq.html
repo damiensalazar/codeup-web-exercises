@@ -12,38 +12,52 @@
             margin: auto;
             padding: 15px 10px;
             display: flex;
-            flex-direction: row;
+            flex-direction: column;
         }
 
         img {
             width: 100%;
             height: 100%;
+        }
+
+        .frame-container{
             display: flex;
             flex-direction: row;
         }
+
+
+
     </style>
 </head>
 <body>
 <h2 class="fade-in" hidden>Would You Like To Register For Our Site?</h2>
-<br>
+
 <div class="container">
     <h1>Would You Like To Sign Up For Our Newsletter? <span id="x">X</span></h1>
 </div>
 
-<div class="frame">
-    <img src="img/arch.jpg" alt="">
+<div class="frame-container">
+    <div class="frame">
+        <img src="img/arch.jpg" alt="">
+        <br>
+        <button type="button">Click Here</button>
+
+    </div>
+
+    <div class="frame">
+        <img src="img/mountains.jpg" alt="">
+        <br>
+        <button class="button">Click Here</button>
+
+    </div>
+
+    <div class="frame">
+        <img src="img/sign.jpg" alt="">
+        <br>
+        <button class="button">Click Here</button>
+
+    </div>
 </div>
-<button type="button">Click Here</button>
-<br>
-<div class="frame">
-    <img src="img/mountains.jpg" alt="">
-</div>
-<button class="button">Click Here</button>
-<br>
-<div class="frame">
-    <img src="img/sign.jpg" alt="">
-</div>
-<button class="button">Click Here</button>
 
 
 <h1>National Parks!</h1>
@@ -199,7 +213,12 @@
             $('#national-parks-heading3').click(function () {
                 $('#bigbend').toggle();
             });
-            $('.fade-in').fadeIn(16000);
+            $('.fade-in').delay(8000).fadeIn(8000);
+        });
+        $('.frame-container').click(function () {
+            $(':first-child').css("color", "blue");
+
+
         });
     })();
 </script>
