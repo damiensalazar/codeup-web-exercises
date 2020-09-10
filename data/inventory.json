@@ -32,8 +32,8 @@
         "price": 10
     }, {
     "title": "Hand Saw",
-    "categories": 10,
-    "quantity": [
+    "quantity": 10,
+    "categories": [
         "tool"
     ],
     "price": 20
@@ -48,8 +48,8 @@
     "price": 60
 }, {
     "title": "Level",
-    "categories": 15,
-    "quantity": [
+    "quantity": 10,
+    "categories": [
         "tool"
     ],
     "price": 70

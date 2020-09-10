@@ -2,9 +2,60 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Ajax Blog</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 </head>
 <body>
+<h1 class="font-weight-bolder text-center">My Blog!</h1>
+https://picsum.photos/500/300?grayscale
+<div id="post"></div>
 
+<div class="post">
+    <div class="row">
+        <div class="col-sm" id="div1">
+            One of three columns
+        </div>
+        <div class="col-sm" id="div2">
+            One of three columns
+        </div>
+        <div class="col-sm" id="div3">
+            One of three columns
+        </div>
+    </div>
+</div>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
+<script src="js/jquery-2.2.4.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+<script>
+    (function () { // IFEE
+        "use strict"
+        $().ready(function () {
+            function renderHtml({title, content, categories, date}) {
+                return `<div class="container p-3 mb-2 bg-secondary text-white card">
+                        <div id="div1" class="h2 card-title">${title}</div>
+                        <div id="div2" class="card-body">${content}</div><br>
+                        <div id="div3" class="card-body">${categories.join(', ')}</div>
+                        <div id="div3" class="card-body">${date}</div>
+                        </div><br>`
+            }
+            function renderBlog(list) {
+                var emptyList = " "
+                    for (let item of list){
+                        emptyList += renderHtml(item)
+                }
+                    $('.post').html(emptyList)
+            }
+            $.get("data/blog.json").done(function (blog) {
+                console.log(blog);
+                renderBlog(blog);
+            })
+
+        });
+    })();
+</script>
 </body>
+
 </html>
