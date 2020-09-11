@@ -13,11 +13,18 @@
     }
 </style>
 <body>
+<nav class="navbar navbar-light bg-light">
+    <a class="navbar-brand">WeatherApp</a>
+    <form class="form-inline">
+        <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+        <button class="btn btn-outline-danger my-2 my-sm-0" type="submit">Search</button>
+    </form>
+</nav>
 <h1 class="" id="name"></h1>
 <hr>
+<div class="d-flex" id="weather"></div>
 <div id='map' style='width: 500px; height: 500px;'></div>
 
-<div class="" id="weather"></div>
 
 
 <script src="js/jquery-2.2.4.js"></script>
@@ -26,13 +33,7 @@
 <script src="js/keys.js"></script>
 
 <script>
-    mapboxgl.accessToken = 'pk.eyJ1IjoiZGFtaWVuc2FsYXphciIsImEiOiJja2Vjd3VwZHEwZzMyMnFwM2N1a3l0aWZlIn0.XYKx9HjM7gIZsnUYN_v_kw';
-    var map = new mapboxgl.Map({
-        container: 'map',
-        style: 'mapbox://styles/mapbox/dark-v10', // stylesheet location
-        center: [-99.9018, 31.9686], // starting position [lng, lat]
-        zoom: 4 // starting zoom
-    });
+
 </script>
 <script>
     (function () { // IFEE
@@ -41,21 +42,21 @@
 
         function renderHTML(locationName, forecast) {
             const{weather, main, dt_txt} = forecast
-            return ` <div class="" style="width: 18rem">
+            return ` <div class="d-flex flex-column card list-group text-center" style="width: 18rem">
 
-                    <div><img class="" src="http://openweathermap.org/img/wn/${weather[0].icon}.png" alt="weather-icon"></div>
+                    <div><img class="list-group-item rounded mx-auto d-block" src="http://openweathermap.org/img/wn/${weather[0].icon}.png" alt="weather-icon"></div>
 
-                    <div class="">${weather[0].description}</div>
+                    <div class="list-group-item text-center">${weather[0].description}</div>
 
-                    <div class="">${main.temp}</div>
+                    <div class="list-group-item text-center">${main.temp}</div>
 
-                    <div class=""">${main.temp_max}/ ${main.temp_min}</div>
+                    <div class="list-group-item text-center"">${main.temp_max}/ ${main.temp_min}</div>
 
-                    <div class="">${main.humidity}</div>
+                    <div class="list-group-item text-center">${main.humidity}</div>
 
-                    <div class="">${main.pressure}</div>
+                    <div class="list-group-item text-center">${main.pressure}</div>
 
-                    <div class="">${dt_txt}</div>
+                    <div class="list-group-item text-center">${dt_txt}</div>
                     <br>`
         }
         function renderWeather(locationName, forecasts) {
@@ -67,6 +68,7 @@
             $('#weather').html(emptyList)
             $('#name').html(locationName)
         }
+
             const api_endpoint = "https://api.openweathermap.org/data/2.5/forecast";
             var q = "San Antonio"
             $.get(api_endpoint, {
@@ -78,6 +80,29 @@
                 console.log(data)
                 console.log(data.list)
                 renderWeather(data.city.name, data.list)
+
+                mapboxgl.accessToken = 'pk.eyJ1IjoiZGFtaWVuc2FsYXphciIsImEiOiJja2Vjd3VwZHEwZzMyMnFwM2N1a3l0aWZlIn0.XYKx9HjM7gIZsnUYN_v_kw';
+                var map = new mapboxgl.Map({
+                    container: 'map',
+                    style: 'mapbox://styles/mapbox/dark-v10', // stylesheet location
+                    center: [-99.9018, 31.9686], // starting position [lng, lat]
+                    zoom: 4 // starting zoom
+                });
+
+                var marker = new mapboxgl.Marker({
+                    draggable: true
+                })
+                    .setLngLat([-99.9018, 31.9686])
+                    .addTo(map);
+
+                function onDragEnd() {
+                    var lngLat = marker.getLngLat();
+                    coordinates.style.display = 'block';
+                    coordinates.innerHTML =
+                        'Longitude: ' + lngLat.lng + '<br />Latitude: ' + lngLat.lat;
+                }
+
+                marker.on('dragend', onDragEnd);
             })
     });
     })();
