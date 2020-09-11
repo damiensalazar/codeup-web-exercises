@@ -72,9 +72,11 @@ var findTheGreatest = function(items) {
 
     }
 }
+/*
 console.log(findTheGreatest(items))
+*/
 
-var findTheLeastPrice = function(items) {
+var findTheLeast = function(items) {
     var least = {price:Infinity}
     for (var i = 0; i < items.length; i++) {
         if(items[i].price < least) {
@@ -84,4 +86,10 @@ var findTheLeastPrice = function(items) {
     }
     return least;
 }
-console.log(findTheLeastPrice(items))
+/*
+console.log(findTheLeast(items))*/
+
+var findTheGreatestAndLeast = function(items){
+    return {greatest:findTheGreatest(items), least:findTheLeast(items)}
+}
+findTheGreatestAndLeast(items);
