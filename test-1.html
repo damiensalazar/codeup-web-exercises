@@ -1,12 +1,12 @@
-<!DOCTYPE html>
+<!--<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <title>Testing Loops!</title>
 </head>
 <body>
-<script>
-    var i = 0;
+<script>-->
+/*    var i = 0;
     while (i < 10) {
         console.log('while loop iteration #' + i);
         i++;
@@ -59,11 +59,71 @@
             continue;
         }
         console.log('Here is every third number: ' + i);
-    }
+    }*/
+<!--
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Example jQuery Page</title>
+</head>
+<body>
+<h1 id="codeup">Hello Codeup</h1>
 
+<script src="/js/jquery.js"></script>
+<script>
+    "use strict";
 
-
+    $(document).ready(function() {
+        $('#codeup').hover(
+            function() {
+                $(this).css('background-color', '#FF0');
+            },
+            function() {
+                $(this).css('background-color', '#FFF');
+            }
+        );
+    });
 </script>
+</body>
+</html>
 
+
+-->
+
+<!--
+</script>
+-->
+<!--
+
+</body>
+</html>-->
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <meta charset="utf8">
+</head>
+<body>
+<h1 id="user_display">show the input here with button click</h1>
+<input id="user_input">
+<button id="clickme">click me</button>
+
+<script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
+<script type="text/javascript">
+    "use strict"
+    // vanilla js
+    document.getElementById("clickme").addEventListener('click',function(){
+        document.getElementById('user_display').innerHTML = document.getElementById("user_input").value;
+    },false);
+/*
+    $('#clickme').click(function(){
+        $('#user_display').html($('#user_input').val());
+    })*/;
+
+    $('#clickme').click(function(){
+        $('#user_display').text() = $('#user_input').val();
+    });
+</script>
 </body>
 </html>

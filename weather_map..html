@@ -3,12 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <title>Weather Map Project</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"
+          integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
     <script src='https://api.mapbox.com/mapbox-gl-js/v1.12.0/mapbox-gl.js'></script>
     <link href='https://api.mapbox.com/mapbox-gl-js/v1.12.0/mapbox-gl.css' rel='stylesheet' />
 </head>
 <style>
-    ul{
+    ul {
         list-style-type: none;
     }
 </style>
@@ -26,10 +27,15 @@
 <div id='map' style='width: 500px; height: 500px;'></div>
 
 
-
 <script src="js/jquery-2.2.4.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"
+        integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut"
+        crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"
+        integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k"
+        crossorigin="anonymous"></script>
+
+
 <script src="js/keys.js"></script>
 
 <script>
@@ -40,9 +46,9 @@
         "use strict"
         $().ready(function () {
 
-        function renderHTML(locationName, forecast) {
-            const{weather, main, dt_txt} = forecast
-            return ` <div class="d-flex flex-column card list-group text-center" style="width: 18rem">
+            function renderHTML(locationName, forecast) {
+                const {weather, main, dt_txt} = forecast
+                return ` <div class="d-flex flex-column card list-group text-center" style="width: 18rem">
 
                     <div><img class="list-group-item rounded mx-auto d-block" src="http://openweathermap.org/img/wn/${weather[0].icon}.png" alt="weather-icon"></div>
 
@@ -58,16 +64,17 @@
 
                     <div class="list-group-item text-center">${dt_txt}</div>
                     <br>`
-        }
-        function renderWeather(locationName, forecasts) {
-            var emptyList = " "
-            for (let forecast of forecasts){
-                emptyList += renderHTML(locationName, forecast)
             }
 
-            $('#weather').html(emptyList)
-            $('#name').html(locationName)
-        }
+            function renderWeather(locationName, forecasts) {
+                var emptyList = " "
+                for (let forecast of forecasts) {
+                    emptyList += renderHTML(locationName, forecast)
+                }
+
+                $('#weather').html(emptyList)
+                $('#name').html(locationName)
+            }
 
             const api_endpoint = "https://api.openweathermap.org/data/2.5/forecast";
             var q = "San Antonio"
@@ -76,7 +83,7 @@
                 q: "San Antonio",
                 units: "imperial",
                 cnt: 5
-            }).done(function(data){
+            }).done(function (data) {
                 console.log(data)
                 console.log(data.list)
                 renderWeather(data.city.name, data.list)
@@ -104,13 +111,8 @@
 
                 marker.on('dragend', onDragEnd);
             })
-    });
+        });
     })();
-
-
-
-
-
 </script>
 </body>
 </html>
