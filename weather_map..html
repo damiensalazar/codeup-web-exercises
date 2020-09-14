@@ -12,6 +12,7 @@
     ul {
         list-style-type: none;
     }
+
 </style>
 <body>
 <nav class="navbar navbar-light bg-light">
@@ -21,10 +22,10 @@
         <button class="btn btn-outline-danger my-2 my-sm-0" type="submit">Search</button>
     </form>
 </nav>
-<h1 class="" id="name"></h1>
+<h1 id="name"></h1>
 <hr>
-<div class="d-flex" id="weather"></div>
-<div id='map' style='width: 500px; height: 500px;'></div>
+<div class="d-flex justify-content-around" id="weather"></div>
+<div class="d-flex justify-content-center" id='map' style='width: 500px; height: 500px;'></div>
 
 
 <script src="js/jquery-2.2.4.js"></script>
@@ -48,7 +49,7 @@
 
             function renderHTML(locationName, forecast) {
                 const {weather, main, dt_txt} = forecast
-                return ` <div class="d-flex flex-column card list-group text-center" style="width: 18rem">
+                return ` <div class="flex-column card list-group text-center" style="width: 18rem">
 
                     <div><img class="list-group-item rounded mx-auto d-block" src="http://openweathermap.org/img/wn/${weather[0].icon}.png" alt="weather-icon"></div>
 
@@ -63,7 +64,7 @@
                     <div class="list-group-item text-center">${main.pressure}</div>
 
                     <div class="list-group-item text-center">${dt_txt}</div>
-                    <br>`
+                    </div><br>`
             }
 
             function renderWeather(locationName, forecasts) {
