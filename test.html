@@ -1,61 +1,58 @@
-<!DOCTYPE html>
-<html>
+<!doctype html>
+<html lang="en">
 <head>
-    <meta charset="utf-8" />
-    <title>Place the geocoder input outside the map</title>
-    <meta name="viewport" content="initial-scale=1,maximum-scale=1,user-scalable=no" />
-    <script src="https://api.mapbox.com/mapbox-gl-js/v1.12.0/mapbox-gl.js"></script>
-    <link href="https://api.mapbox.com/mapbox-gl-js/v1.12.0/mapbox-gl.css" rel="stylesheet" />
-    <style>
-        body { margin: 0; padding: 0; }
-        #map { position: absolute; top: 0; bottom: 0; width: 100%; }
-    </style>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Fizzbuzz Test.</title>
 </head>
 <body>
-<script src="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v4.5.1/mapbox-gl-geocoder.min.js"></script>
-<link
-        rel="stylesheet"
-        href="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v4.5.1/mapbox-gl-geocoder.css"
-        type="text/css"
-/>
-<!-- Promise polyfill script required to use Mapbox GL Geocoder in IE 11 -->
-<script src="https://cdn.jsdelivr.net/npm/es6-promise@4/dist/es6-promise.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/es6-promise@4/dist/es6-promise.auto.min.js"></script>
-<style>
-    .geocoder {
-        position: absolute;
-        z-index: 1;
-        width: 50%;
-        left: 50%;
-        margin-left: -25%;
-        top: 10px;
-    }
-    .mapboxgl-ctrl-geocoder {
-        min-width: 100%;
-    }
-    #map {
-        margin-top: 75px;
-    }
-</style>
-<div id="map"></div>
-<div id="geocoder" class="geocoder"></div>
+<h1>Morning Pushup.</h1>
+<h2>Fizzbuzz</h2>
+    <input type="number" id="input">
+<button type="button" id="button">Fizzbuzz</button>
+<div id="output"></div>
+
+<script src="js/jquery-2.2.4.js"></script>
 
 <script>
-    mapboxgl.accessToken = 'pk.eyJ1IjoiZGFtaWVuc2FsYXphciIsImEiOiJja2Vjd3VwZHEwZzMyMnFwM2N1a3l0aWZlIn0.XYKx9HjM7gIZsnUYN_v_kw';
-    var map = new mapboxgl.Map({
-        container: 'map',
-        style: 'mapbox://styles/mapbox/streets-v11',
-        center: [-79.4512, 43.6568],
-        zoom: 13
+/*    function fizzbuzz(num){
+        for(var i = 1; i < num; i ++){
+            if(i % 15 === 0){
+                console.log("fizzbuzz")
+            }else if(i % 3 === 0){
+                console.log("fizz")
+            }else if(i % 5 === 0){
+                console.log("buzz")
+            }else{
+                console.log(i)
+            }
+        }
+    }
+    fizzbuzz(30)*/
+
+    $(document).ready(function(){
+        $('#button').click(function(){
+           var num = $('#input').val()
+            for(var i = 1; i < num; i++){
+                if(i % 15 === 0){
+                    $('#output').append('fizzbuzz<br>');
+                }else if(i % 3 === 0){
+                    $('#output').append('fizz<br>');
+                }else if(i % 5 === 0){
+                    $('#output').append('buzz<br>');
+                } else{
+                    $('#output').append(i + "<br>");
+                }
+            }
+/*
+                $('#output').append("");
+*/
+        });
     });
 
-    var geocoder = new MapboxGeocoder({
-        accessToken: mapboxgl.accessToken,
-        mapboxgl: mapboxgl
-    });
 
-    document.getElementById('geocoder').appendChild(geocoder.onAdd(map));
 </script>
-
 </body>
 </html>
